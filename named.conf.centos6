@@ -1,4 +1,4 @@
 check process named with pidfile /var/run/named.pid
        start program = "/etc/init.d/named start"
        stop program  = "/etc/init.d/named stop"
-       if failed port 53 use type udp protocol dns then restart
+       if failed host 127.0.0.1 port 53 use type udp protocol dns then restart
